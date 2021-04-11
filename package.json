@@ -1,0 +1,20 @@
+{
+  "name": "pwa-live",
+  "version": "0.0.0",
+  "description": "Webcomponent pwa-live following open-wc recommendations",
+  "author": "pwa-live",
+  "license": "MIT",
+  "scripts": {
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "dile-pages": "^1.1.3",
+    "dile-tabs": "^2.1.0",
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0",
+    "pwa-helpers": "^0.9.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.10"
+  }
+}
