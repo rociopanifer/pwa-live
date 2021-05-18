@@ -7,6 +7,19 @@
   <meta name="Description" content="Put your description here.">
   <base href="/">
 
+  <script>
+    // Hay una variable de entorno que Redux utiliza cuando trabaja con node.js y que debe estar almacenada dentro del navegador
+    // Este problema está solucionado en Polymer's PWA Starter kits
+    // https://stackoverflow.com/questions/50407570/process-is-not-defined-error-with-polymer-and-redux
+    // HACK(keanulee): The Redux package assumes `process` exists - mock it here before the module is loaded.
+    // Creamos la varible de entorno para solucionar el problema.
+    window.process = {
+      env: {
+        NODE_ENV: 'production'
+      }
+    };
+  </script>
+
   <style>
     html,
     body {
