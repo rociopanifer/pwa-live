@@ -13,16 +13,18 @@ class ViewMap extends PageViewElement {
 
   render() {
     return html`
-      <select @change="${this.optionChanged}">
+      <select id="options" @change="${this.optionChanged}">
         <option value="">Eliga una opción</option>
         <option value="home">Home</option>
         <option value="about">About</option>
         <option value="contact">Contact</option>
+        <option value="blog/bienvenida">Blog</option>
       </select>
     `;
   }
 
   optionChanged(e) {
+      console.log('-----> option selected: ', this.shadowRoot.querySelector('#options').value);
       const page = e.target.value;
       console.log(page);
       this.dispatchEvent(new CustomEvent('navigate', {
@@ -30,6 +32,9 @@ class ViewMap extends PageViewElement {
           composed: true,
           detail: page
       }));
+      
+      // Se inicializa el Select
+      this.shadowRoot.querySelector('#options').value = '';
   }
 }
 
